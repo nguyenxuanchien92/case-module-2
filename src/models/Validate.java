@@ -1,5 +1,7 @@
 package models;
 
 public interface Validate {
-    boolean isValidate(String val);
+    static boolean isValidate(String val) {
+        return false;
+    }
 }
