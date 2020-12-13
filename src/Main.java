@@ -1,10 +1,8 @@
-import models.Validate;
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main implements Validate {
+public class Main {
 
     public static Scanner sc = new Scanner(System.in);
     public static String choice = "0";
@@ -25,7 +23,8 @@ public class Main implements Validate {
         System.out.print("Lựa chọn của bạn: ");
 
         choice = sc.nextLine();
-        boolean result = isValidate(choice);
+        String regex = "[0-4]";
+        boolean result = isValidate(choice,regex);
         if (result) {
             switch (Integer.valueOf(choice)) {
                 case 1:
@@ -45,14 +44,12 @@ public class Main implements Validate {
                     System.exit(0);
             }
         }else {
-            System.out.println("Bạn nhập sai định dạng dữ liệu\n");
+            System.out.println("Lựa chọn không phù hợp\n");
         }
 
     }
 
-
-    public static boolean isValidate(String val) {
-        String regex = "[0-9]";
+    public static boolean isValidate(String val,String regex) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(val);
         boolean result = matcher.matches();
