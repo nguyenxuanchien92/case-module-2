@@ -14,5 +14,7 @@ public class Main {
         System.out.println("2.Tạo phòng");
         System.out.println("3.Tìm kiếm thông tin khách hàng");
         System.out.println("4.Thanh toán");
+
+
     }
 }
